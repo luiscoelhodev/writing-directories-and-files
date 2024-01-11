@@ -17,7 +17,7 @@ const writeJSON = async (dirPath, file) => {
 
 const createDirectoryIfNotExists = async (dirPath) => {
     try {
-        await fs.mkdir(dirPath);
+        await fs.mkdir(dirPath, { recursive: true });
     } catch (error) {
         console.error(`Got an error trying to create the folder: the path ${dirPath} already exists.`);
     }
